@@ -73,7 +73,7 @@ export default function Landing() {
       style={{ "--px": "0", "--py": "0" } as React.CSSProperties}
     >
       {/* Rotating hypnotic spiral */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[220vmax] w-[220vmax] -translate-x-1/2 -translate-y-1/2 animate-spin-slow spiral-bg opacity-70" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[220vmax] w-[220vmax] -translate-x-1/2 -translate-y-1/2 animate-spin-illusion spiral-bg opacity-90" />
       {/* Darkening veil so the title and skulls stay readable */}
       <div className="spiral-veil pointer-events-none absolute inset-0" />
 
@@ -88,21 +88,27 @@ export default function Landing() {
         <StarField />
       </div>
 
-      {/* Title */}
+      {/* Collaged black-and-white band photo on the right */}
       <div
-        className="relative z-10"
+        className="band-photo pointer-events-none absolute right-0 top-0 z-[5] hidden h-full w-1/2 md:block lg:w-2/5"
+        style={{ transform: "rotate(1deg)" }}
+      />
+
+      {/* Title — your ransom-note artwork */}
+      <div
+        className="relative z-10 flex flex-col items-center"
         style={{
           transform:
-            "translate3d(calc(var(--px) * -10px), calc(var(--py) * -10px), 0)",
+            "translate3d(calc(var(--px) * -8px), calc(var(--py) * -8px), 0)",
         }}
       >
-        <h1
-          className="animate-title-glow font-display text-6xl leading-none tracking-wide text-bone sm:text-7xl md:text-8xl"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          {SITE.name}
-        </h1>
-        <p className="mt-4 text-sm uppercase tracking-[0.3em] text-muted">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/title.png"
+          alt={SITE.name}
+          className="w-[85vw] max-w-3xl drop-shadow-[3px_5px_0_rgba(0,0,0,0.6)]"
+        />
+        <p className="mt-5 text-xs uppercase tracking-[0.35em] text-bone/90 [text-shadow:1px_1px_0_rgba(0,0,0,0.85)]">
           {SITE.tagline}
         </p>
       </div>
@@ -126,7 +132,7 @@ export default function Landing() {
               )}
             </span>
           </span>
-          <span className="text-sm uppercase tracking-[0.25em] text-muted transition-colors duration-300 group-hover:text-bone">
+          <span className="rounded bg-ink/70 px-2 py-0.5 text-sm uppercase tracking-[0.25em] text-bone/90 backdrop-blur-sm transition-colors duration-300 group-hover:text-toxic">
             {p.label}
           </span>
         </Link>

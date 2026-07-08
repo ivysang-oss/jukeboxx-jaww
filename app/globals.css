@@ -108,6 +108,10 @@ body {
 .animate-spin-slow {
   animation: spinSlow 40s linear infinite;
 }
+/* Faster, continuous spin — reads as a hypnotic optical illusion */
+.animate-spin-illusion {
+  animation: spinSlow 12s linear infinite;
+}
 .animate-title-glow {
   animation: titleGlow 5s ease-in-out infinite;
 }
@@ -144,14 +148,25 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* Dark vignette laid over the spiral so titles/skulls stay readable */
+/* Light vignette over the spiral — keeps it vivid, just darkens edges a touch */
 .spiral-veil {
   background: radial-gradient(
     circle at center,
-    rgba(10, 7, 16, 0.45) 0%,
-    rgba(10, 7, 16, 0.85) 66%,
-    rgba(10, 7, 16, 0.97) 100%
+    rgba(10, 7, 16, 0.12) 0%,
+    rgba(10, 7, 16, 0.45) 62%,
+    rgba(10, 7, 16, 0.82) 100%
   );
+}
+
+/* Collaged black-and-white band photo (drop file at public/images/band-hero.jpg) */
+.band-photo {
+  background-image: url("/images/band-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(1) contrast(1.08);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 30%);
+  mask-image: linear-gradient(to right, transparent, #000 30%);
 }
 
 /* Respect users who prefer reduced motion */
