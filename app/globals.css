@@ -137,6 +137,23 @@ body {
   );
 }
 
+/* ── Hypnotic spiral background ───────────────────────────────────────── */
+.spiral-bg {
+  background-image: url("/images/backgrounds/spiral.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Dark vignette laid over the spiral so titles/skulls stay readable */
+.spiral-veil {
+  background: radial-gradient(
+    circle at center,
+    rgba(10, 7, 16, 0.45) 0%,
+    rgba(10, 7, 16, 0.85) 66%,
+    rgba(10, 7, 16, 0.97) 100%
+  );
+}
+
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,

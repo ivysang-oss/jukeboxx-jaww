@@ -11,6 +11,10 @@ export default function PageShell({
 }) {
   return (
     <div className="flex min-h-[100svh] flex-col">
+      {/* Faint spiral texture behind interior pages (kept dark for readability) */}
+      <div className="spiral-bg pointer-events-none fixed inset-0 opacity-20" />
+      <div className="pointer-events-none fixed inset-0 bg-ink/85" />
+
       <header className="sticky top-0 z-20 border-b border-line bg-ink/80 backdrop-blur">
         <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
           <Link
@@ -35,7 +39,7 @@ export default function PageShell({
         </nav>
       </header>
 
-      <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-14">
+      <main className="relative z-10 mx-auto w-full max-w-5xl flex-1 px-6 py-14">
         <h1
           className="mb-10 font-display text-5xl tracking-wide text-bone sm:text-6xl"
           style={{ fontFamily: "var(--font-display)" }}
@@ -45,7 +49,7 @@ export default function PageShell({
         {children}
       </main>
 
-      <footer className="border-t border-line bg-ink2">
+      <footer className="relative z-10 border-t border-line bg-ink2">
         <div className="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-8 text-xs uppercase tracking-[0.2em] text-muted sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {new Date().getFullYear()} {SITE.name}

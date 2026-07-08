@@ -72,8 +72,10 @@ export default function Landing() {
       className="relative flex min-h-[100svh] flex-col items-center justify-center gap-10 overflow-hidden px-6 py-24 text-center"
       style={{ "--px": "0", "--py": "0" } as React.CSSProperties}
     >
-      {/* Ambient radial glows */}
-      <div className="aura pointer-events-none absolute inset-0" />
+      {/* Rotating hypnotic spiral */}
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[220vmax] w-[220vmax] -translate-x-1/2 -translate-y-1/2 animate-spin-slow spiral-bg opacity-70" />
+      {/* Darkening veil so the title and skulls stay readable */}
+      <div className="spiral-veil pointer-events-none absolute inset-0" />
 
       {/* Parallax starfield */}
       <div
